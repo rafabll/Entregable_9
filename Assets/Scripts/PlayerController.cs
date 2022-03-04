@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 10f;
-    private float horizontalInput;
+    private float speed = 10f;    
     private float xRange = 9f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(-Vector3.right * speed * Time.deltaTime);
         }
-
+        
         if (transform.position.x > xRange)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
@@ -35,5 +35,6 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
+        
     }
 }
